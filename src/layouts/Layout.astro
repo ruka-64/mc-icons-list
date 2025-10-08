@@ -1,0 +1,28 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang='ja' class='text-white'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='description' content={description} />
+		<meta name='theme-color' content='#3ea9fb' />
+		<link rel='icon' href='/favicon.ico' />
+		<noscript>
+			<link rel='stylesheet' href='/noscript.css' />
+		</noscript>
+		<title>{title} | MCIcons</title>
+	</head>
+	<body class='m-0'>
+		<slot />
+	</body>
+</html>
